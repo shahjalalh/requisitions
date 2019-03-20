@@ -95,6 +95,6 @@
 
     <!--Supplier menu-->
 
-    <menuitem id="menu_procurement_management_po_requisition" name="Requitation" parent="purchase.menu_purchase_root" action="po_requisition_action" sequence="101"/>
+    <menuitem id="menu_procurement_management_po_requisition" name="Requitation" parent="purchase.menu_procurement_management" action="po_requisition_action" sequence="101"/>
 
 </odoo>
