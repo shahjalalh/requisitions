@@ -6,7 +6,7 @@
     'summary': 'Requisition',
     'description': "Requisition",
     'website': '',
-    'depends': ['stock', 'purchase'],
+    'depends': ['purchase', 'stock'],
     'data': [
         'views/requisition_view.xml',
     ],
