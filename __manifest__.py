@@ -11,7 +11,7 @@
     'website': "https://github.com/shahjalalh",
     'category': 'Purchase',
     'version': '1.0',
-    'depends': ['base', 'purchase', 'stock'],
+    'depends': ['base', 'account', 'purchase', 'stock'],
     'data': [
         'views/requisition_view.xml',
     ],
