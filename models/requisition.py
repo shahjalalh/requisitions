@@ -19,8 +19,7 @@ class Requisition(models.Model):
     _name = "po.requisition"
     
     name = fields.Char('PO Requisition')
-    warehouse_ids = fields.Many2many('stock.warehouse', string='Warehouses', required=True,
-        help="Show the routes that apply on selected warehouses.")
+    warehouse_id = fields.Many2one('stock.warehouse', string='Warehouse', required=True)
     delivery_date = fields.Datetime(string='Delivery Date', required=True, index=True)
 
     state = fields.Selection([
