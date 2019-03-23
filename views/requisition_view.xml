@@ -16,7 +16,7 @@
                                 <field name="name" readonly="1"/>
                                 <field name="warehouse_id"/>
                                 <field name="delivery_date" />
-                                <field name="po_reference"/>
+                                <field name="po_reference" readonly="1"/>
                                 <field name="state" />
                             </group>
 
@@ -65,6 +65,7 @@
                     <field name="name" string="Name"/>
                     <field name="warehouse_id" />
                     <field name="delivery_date" />
+                    <field name="po_reference" readonly="1"/>
                     <field name="state" />
                 </tree>
             </field>
