@@ -1,11 +1,16 @@
 {
     'name': 'Requisition',
-    'version': '1.0',
+    'summary': """Requisition""",
+    'description': """
+        Requisition module helps officially request or take products before createing RFQ in purchase:
+            - 1
+            - 2
+            - 3
+    """,
     'author': "Shahjalal Hossain",
+    'website': "https://github.com/shahjalalh",
     'category': 'Purchase',
-    'summary': 'Requisition',
-    'description': "Requisition",
-    'website': '',
+    'version': '1.0',
     'depends': ['base', 'purchase', 'stock'],
     'data': [
         'views/requisition_view.xml',
