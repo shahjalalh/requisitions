@@ -50,6 +50,7 @@ class Requisition(models.Model):
         for line_item in self.order_line:
             po_line_list.append([0, False,
                                  {
+                                     'name': line_item.product_id.name_template,
                                      'product_id': line_item.product_id.id,
                                      'product_qty': line_item.product_qty,
                                      'product_uom': line_item.product_uom.id,
