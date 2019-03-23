@@ -16,6 +16,7 @@
                                 <field name="name" readonly="1"/>
                                 <field name="warehouse_id"/>
                                 <field name="delivery_date" />
+                                <field name="po_reference"/>
                                 <field name="state" />
                             </group>
 
