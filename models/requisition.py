@@ -41,7 +41,7 @@ class Requisition(models.Model):
         po_data = {
             'requisition_number': str(self.name),
             'date_order': fields.datetime.now(),
-            'partner_id': self.partner_id,
+            'partner_id': self.partner_id.id,
 
         }
 
@@ -50,9 +50,9 @@ class Requisition(models.Model):
         for line_item in self.order_line:
             po_line_list.append([0, False,
                                  {
-                                     'product_id': line_item.product_id,
+                                     'product_id': line_item.product_id.id,
                                      'product_qty': line_item.product_qty,
-                                     'product_uom': line_item.product_uom,
+                                     'product_uom': line_item.product_uom.id,
 
                                  }])
 
