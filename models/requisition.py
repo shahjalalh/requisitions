@@ -99,4 +99,4 @@ class RequisitionOrderLine(models.Model):
     product_uom = fields.Many2one(
         'uom.uom', string='Product Unit of Measure', required=True)
     price_unit = fields.Float(string='Price', digits=dp.get_precision(
-        'Product Unit of Measure'))
+        'Product Price'))
