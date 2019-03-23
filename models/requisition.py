@@ -36,6 +36,15 @@ class Requisition(models.Model):
 
         return True
 
+    
+    @api.model
+    def create(self, values):
+        record = super(Requisition, self).create(values)
+        
+        record.name = "REQ0"+str(record.id)
+
+        return record
+
 
 class RequisitionOrderLine(models.Model):
     _name = 'requisition.order.line'
@@ -43,7 +52,7 @@ class RequisitionOrderLine(models.Model):
 
 
     order_id = fields.Many2one('po.requisition', string='Order Reference', index=True, required=True, ondelete='cascade')
-    name = fields.Text(string='Description', required=True)
+    name = fields.Text(string='Description')
     product_id = fields.Many2one('product.product', string='Product', domain=[('purchase_ok', '=', True)], change_default=True, required=True)
     product_qty = fields.Float(string='Quantity', digits=dp.get_precision('Product Unit of Measure'), required=True)
     
