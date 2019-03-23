@@ -30,7 +30,7 @@ class Requisition(models.Model):
         ('approve', 'Approve'),
         ('cancel', 'Cancelled')
     ], string='Status', readonly=True, index=True, copy=False, default='draft', track_visibility='onchange')
-    partner_id = fields.Many2one('res.partner', string='Vendor',
+    partner_id = fields.Many2one('res.partner', string='Vendor', required=True,
                                  help="You can find a vendor by its Name, TIN, Email or Internal Reference.")
     order_line = fields.One2many('requisition.order.line', 'order_id', string='Order Lines', states={
                                  'cancel': [('readonly', True)], 'done': [('readonly', True)]}, copy=True)
