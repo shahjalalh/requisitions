@@ -54,7 +54,8 @@ class Requisition(models.Model):
                                      'product_id': line_item.product_id.id,
                                      'product_qty': line_item.product_qty,
                                      'product_uom': line_item.product_uom.id,
-
+                                     'date_planned': fields.datetime.now(),
+                                     'price_unit': line_item.product_id.price,
                                  }])
 
         po_data['order_line'] = po_line_list
@@ -97,3 +98,5 @@ class RequisitionOrderLine(models.Model):
 
     product_uom = fields.Many2one(
         'uom.uom', string='Product Unit of Measure', required=True)
+    price_unit = fields.Float(string='Price', digits=dp.get_precision(
+        'Product Unit of Measure'))
