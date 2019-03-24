@@ -60,10 +60,11 @@ class Requisition(models.Model):
 
         po_data['order_line'] = po_line_list
 
+        import pdb;pdb.set_trace()
         # create PO
         po_env = self.env['purchase.order'].create(po_data)
         saved_po_id = po_env.create(po_data)
-        import pdb;pdb.set_trace()
+        
         # po_env = self.pool.get('purchase.order')
         # saved_po_id = po_env.create(self._cr, self._uid, po_data, context=self._context)
 
