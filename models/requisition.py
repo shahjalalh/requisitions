@@ -77,12 +77,19 @@ class Requisition(models.Model):
 
     @api.model
     def create(self, values):
-        record = super(Requisition, self).create(values)
 
         # Odoo Error, a partner cannot follow twice the same object
-        subtype_ids = self.env['mail.message.subtype'].search([('res_model', '=', 'po.requisition')]).ids
-        record.message_subscribe(partner_ids=[record.partner_id.id],subtype_ids=subtype_ids)
+        # subtype_ids = self.env['mail.message.subtype'].search([('res_model', '=', 'po.requisition')]).ids
+        # record.message_subscribe(partner_ids=[record.partner_id.id],subtype_ids=subtype_ids)
 
+        if 'res_model' in values and 'res_id' in values and 'partner_id' in values:
+            dups = self.env['mail.followers'].search([('res_model', '=',values.get('res_model')),('res_id', '=', values.get('res_id')), ('partner_id', '=', values.get('partner_id'))])
+            
+            if len(dups):
+                for p in dups:
+                    p.unlink()
+
+        record = super(Requisition, self).create(values)
         record.name = "REQ0"+str(record.id)
 
         return record
