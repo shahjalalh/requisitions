@@ -70,7 +70,7 @@ class Requisition(models.Model):
 
         # Update PO Reference and state
         req_update_query = "UPDATE po_requisition SET po_reference={0}, state='approve' WHERE id={1}".format(
-            saved_po_id, self.id)
+            saved_po_id.id, self.id)
         self._cr.execute(req_update_query)
         self._cr.commit()
 
