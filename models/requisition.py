@@ -55,7 +55,7 @@ class Requisition(models.Model):
                                      'product_qty': line_item.product_qty,
                                      'product_uom': line_item.product_uom.id,
                                      'date_planned': fields.datetime.now(),
-                                     'price_unit': line_item.product_id.price,
+                                     'price_unit': line_item.product_id.product_tmpl_id.list_price,
                                  }])
 
         po_data['order_line'] = po_line_list
