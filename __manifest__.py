@@ -13,8 +13,8 @@
     'version': '1.0',
     'depends': ['base', 'account', 'purchase', 'stock'],
     'data': [
-        'security/ir.model.access.csv',
         'security/security.xml',
+        'security/ir.model.access.csv',
         'views/requisition_view.xml',
     ],
     'installable': True,
