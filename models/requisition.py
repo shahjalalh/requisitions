@@ -60,7 +60,7 @@ class Requisition(models.Model):
 
         po_data['order_line'] = po_line_list
 
-        import pdb;pdb.set_trace()
+        # import pdb;pdb.set_trace()
         # create PO
         po_env = self.env['purchase.order'].create(po_data)
         saved_po_id = po_env.create(po_data)
@@ -78,18 +78,7 @@ class Requisition(models.Model):
 
     @api.model
     def create(self, values):
-
-        # Odoo Error, a partner cannot follow twice the same object
-        # subtype_ids = self.env['mail.message.subtype'].search([('res_model', '=', 'po.requisition')]).ids
-        # record.message_subscribe(partner_ids=[record.partner_id.id],subtype_ids=subtype_ids)
-        """
-        if 'res_model' in values and 'res_id' in values and 'partner_id' in values:
-            dups = self.env['mail.followers'].search([('res_model', '=',values.get('res_model')),('res_id', '=', values.get('res_id')), ('partner_id', '=', values.get('partner_id'))])
-            
-            if len(dups):
-                for p in dups:
-                    p.unlink()
-        """
+        
         record = super(Requisition, self).create(values)
         record.name = "REQ0"+str(record.id)
 
@@ -114,6 +103,7 @@ class RequisitionOrderLine(models.Model):
         'Product Price'))
 
 
+# Odoo 12: Error, a partner cannot follow twice the same object
 class Followers(models.Model):
     _inherit = 'mail.followers'
 
