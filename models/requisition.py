@@ -79,6 +79,10 @@ class Requisition(models.Model):
     def create(self, values):
         record = super(Requisition, self).create(values)
 
+        # Odoo Error, a partner cannot follow twice the same object
+        subtype_ids = self.env['mail.message.subtype'].search([('res_model', '=', 'po.requisition')]).ids
+        record.message_subscribe(partner_ids=[record.partner_id.id],subtype_ids=subtype_ids)
+
         record.name = "REQ0"+str(record.id)
 
         return record
