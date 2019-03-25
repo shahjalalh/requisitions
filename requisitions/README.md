@@ -18,5 +18,5 @@ Initially requisition is saved as draft state, when user approve that requisitio
 
 Don't forget to set access for **PO Requisition** for per user - 
 
-<img src="./static/description/user-settings.png" />
+<img src="./static/description/screenshots/user-settings.png" />
 
