@@ -1,11 +1,20 @@
 {
     'name': 'Requisition',
-    'summary': """Requisition""",
+    'summary': """PO Requisition""",
     'description': """
-        Requisition module helps officially request or take products before createing RFQ in purchase:
-            - 1
-            - 2
-            - 3
+        Here user can place a requisition for purchase. In the requisition from user will
+get following fields
+* **Product (Inventory Product reference):** Select field when user can select product from
+inventory. Odoo entity reference
+* **Quantity:** A text field where user can place integer number
+* **Unit of measure (UOM reference):** Select field where user can select inventory’s unit of
+measure.
+* **Delivery date:** Odoo date field
+* **Stock location (Inventory stock location reference):** Select field where user can
+select Warehouse location.
+* **Name:** An automated sequence number
+
+Initially requisition is saved as draft state, when user approve that requisition by clicking a button named "Approve" a purchase order will be created in draft mode. This draft Purchase order is actually purchase order in quotation state. And later PO will be conformed by user manually.
     """,
     'author': "Shahjalal Hossain",
     'website': "https://github.com/shahjalalh",

@@ -9,7 +9,7 @@ inventory. Odoo entity reference
 measure.
 * **Delivery date:** Odoo date field
 * **Stock location (Inventory stock location reference):** Select field where user can
-select Where house location.
+select Warehouse location.
 * **Name:** An automated sequence number
 
 Initially requisition is saved as draft state, when user approve that requisition by clicking a button named "Approve" a purchase order will be created in draft mode. This draft Purchase order is actually purchase order in quotation state. And later PO will be conformed by user manually.
