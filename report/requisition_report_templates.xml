@@ -12,17 +12,19 @@
         <div class="page">
             <div class="oe_structure"/>
 
-            <h2>PO Requisition <span t-field="o.name"/></h2>
+            <h2>PO Requisition: <span t-field="o.name"/></h2>
+            <br/><br/>
             <div class="row">
                 <div class="col-6">
-                    <p>Warehouse: <span t-field="o.warehouse_id"/></p>
-                    <p>Delivery Date: <span t-field="o.delivery_date"/></p>
+                    <p><strong>Warehouse:</strong> <span t-field="o.warehouse_id"/></p>
+                    <p><strong>Delivery Date:</strong> <span t-field="o.delivery_date"/></p>
                 </div>
                 <div class="col-6">
-                    <p>PO Reference: <span t-field="o.po_reference"/></p>
-                    <p>Vendor: <span t-field="o.partner_id"/></p>
+                    <p><strong>PO Reference:</strong> <span t-field="o.po_reference"/></p>
+                    <p><strong>Vendor:</strong> <span t-field="o.partner_id"/></p>
                 </div>
             </div>
+            <br/><br/><br/>
             
 
             <table class="table table-sm">
