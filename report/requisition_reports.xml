@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <report 
-            string="PO Requition" 
+            string="PO Requisition" 
             id="action_report_po_requisition" 
             model="po.requisition" 
             report_type="qweb-pdf"
