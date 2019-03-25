@@ -15,12 +15,12 @@
             <h2>PO Requisition <span t-field="o.name"/></h2>
             <div class="row">
                 <div class="col-6">
-                    <p><span t-field="o.warehouse_id"/></p>
-                    <p><span t-field="o.delivery_date"/></p>
+                    <p>Warehouse: <span t-field="o.warehouse_id"/></p>
+                    <p>Delivery Date: <span t-field="o.delivery_date"/></p>
                 </div>
                 <div class="col-6">
-                    <span t-field="o.po_reference"/>
-                    <span t-field="o.partner_id"/>
+                    <p>PO Reference: <span t-field="o.po_reference"/></p>
+                    <p>Vendor: <span t-field="o.partner_id"/></p>
                 </div>
             </div>
             
@@ -42,7 +42,7 @@
                             <span t-field="order_line.product_qty"/>
                         </td>
                         <td class="text-right">
-                            <span t-field="order_line.product_uom" groups="uom.group_uom"/>
+                            <span t-field="order_line.product_uom.name"/>
                         </td>
                     </tr>
                 </tbody>
